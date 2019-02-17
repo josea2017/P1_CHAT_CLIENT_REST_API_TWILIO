@@ -1,3 +1,14 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twilio Chat Quickstart</title>
+    <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
 <?php
 // Update the path below to your autoload.php,
 // see https://getcomposer.org/doc/01-basic-usage.md
@@ -29,14 +40,19 @@ if(isset($_POST['btn_new_channel'])){
 ////////////////////////************   MESSAGES  *********************
 $messages = null;
 $selected_idchannel = null;
-$chat_input = null;
-$chat_input = $_POST['chat_input'];
+//$chat_input = null;
+$chat_input = $_POST['chat_input'] ?? null;
 if(isset($_POST['btn_create_message'])){
-   echo $chat_input;
+   //echo $chat_input;
    $selected_idchannel = $_POST['btn_create_message'];
-   echo $selected_idchannel;
+   //echo $selected_idchannel;
    $message_model->create_message($selected_idchannel, $chat_input);
    $messages = $message_model->get_messages_user_in_channel($selected_idchannel);
+   ?>
+    <div class="alert alert-success" role="alert" style="display: flex; position: absolute; margin-top: 33%; margin-left: 58%; width: 20%;">
+      Successfully
+    </div>
+    <?php
 }
 if(isset($_POST['btn_view_channel'])){
     $user_channels = null;
@@ -66,15 +82,6 @@ if(isset($_POST['btn_join_at_channel'])){
 
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Twilio Chat Quickstart</title>
-    <link rel="shortcut icon" href="//www.twilio.com/marketing/bundles/marketing/img/favicons/favicon.ico">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
 <body>
   <form method="POST">
     <div style="display: flex; position: absolute; width: 20%; margin-top: 1%;">
@@ -129,7 +136,7 @@ if(isset($_POST['btn_join_at_channel'])){
     </div>
   </form>
   <form method="POST">
-    <section>
+    <section style="width: 100vw; height: 80vh;">
       <div id="messages">
         <?php 
             foreach ($messages as $record) {
@@ -140,7 +147,7 @@ if(isset($_POST['btn_join_at_channel'])){
      
     </section>
     <div style="display: flex; position: absolute; width: 40%; height: 10%; margin-top: 1%; margin-left: 25%;">
-        <input id="chat-input" name="chat_input" type="text" style="color:black; width: 100%;" placeholder="say anything" autofocus value="<?= isset($_POST['chat_input']) ? $_POST['chat_input'] : ''; ?>" />
+        <input id="chat-input" name="chat_input" type="text" style="color:black; width: 100%;" placeholder="Message here" autofocus value="<?= isset($_POST['chat_input']) ? $_POST['chat_input'] : ''; ?>" />
         <?php  
          echo "<button class='btn btn-secondary' type='submit' name='btn_create_message' value='$selected_idchannel'>" .  "Send" . "</button>";
          ?>
