@@ -51,14 +51,17 @@ use Twilio\Jwt\Grants\ChatGrant;
 </head>
 <body>
 <form action="index.php" method="POST">
- <div style="display: flex; width: 40vw; height: 40vh; flex-wrap: wrap; position: absolute; top: 13%; left: 2%;">
+ <div style="display: flex; position: absolute; top: 5%; left: 40%;">
+     <img src="../imgs/chat.png">
+ </div>
+ <div style="display: flex; width: 40vw; height: 40vh; flex-wrap: wrap; position: absolute; top: 50%; left: 2%;">
     <label>Nickname: </label>
     <input type="text" name="identity" autofocus style="border-style: groove; margin-left: 3%; width: 225px; height:35px;" placeholder="My identity" value="<?= isset($_POST['id_categoria']) ? $_POST['id_categoria'] : ''; ?>">
     <button id="btn_login" value="" name="btn_login" class="btn btn-success" type="submit" style="margin-left: 3%; width: 100px; height:33px;">GO</button>
  </div>
- <div style="display: flex; width: 40vw; height: 40vh; flex-wrap: wrap; position: absolute; top: 60%; left: 2%;">
+ <div style="display: flex; width: 40vw; height: 40vh; flex-wrap: wrap; position: absolute; top: 70%; left: 2%;">
     <label>Nickname: </label>
-    <input type="text" name="signup" autofocus style="border-style: groove; margin-left: 3%; width: 225px; height:35px;" placeholder="New Unique Nick" value="<?= isset($_POST['signup']) ? $_POST['signup'] : ''; ?>">
+    <input type="text" name="signup" autofocus style="border-style: groove; margin-left: 3%; width: 225px; height:35px;" placeholder="New user identity" value="<?= isset($_POST['signup']) ? $_POST['signup'] : ''; ?>">
     <button id="btn_signup" value="" name="btn_signup" class="btn btn-primary" type="submit" style="margin-left: 3%; width: 100px; height:33px;">SIGN UP</button>
  </div> 
 </form>
