@@ -28,9 +28,16 @@ class Channel
                                 ->channels
                                 ->create(array("friendlyName" => $new_channel_name));
     }
-    
-    
-    
 
+    public function edit_channel($channel_id, $new_name)
+    {
+      $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+                            ->channels($channel_id)
+                            ->update(array(
+                                         "friendlyName" => $new_name
+                                     )
+                            );
+    }   
+    
   }
 }

@@ -39,6 +39,13 @@ class User
       return $user->sid;
     }
 
+    public function get_user($identity){
+      $user = $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+                         ->users("$identity")
+                         ->fetch();
+      return $user;
+    }
+
     public function create_user($identity)
     {
       $user = $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
