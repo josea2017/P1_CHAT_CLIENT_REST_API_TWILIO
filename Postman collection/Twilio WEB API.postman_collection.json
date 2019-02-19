@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "a8ce73e5-092f-4a9f-b9e6-1aff46cbc197",
+		"name": "Twilio WEB API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get channels list from my service",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dc81fac28291f97f176f6dec305b5fc9",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "AC68e755f9b09bf542c5ae71b4cc2302dd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://chat.twilio.com/v2/Services/ISf3057fcd46c2488aa0a7882e464263a7/Channels",
+					"protocol": "https",
+					"host": [
+						"chat",
+						"twilio",
+						"com"
+					],
+					"path": [
+						"v2",
+						"Services",
+						"ISf3057fcd46c2488aa0a7882e464263a7",
+						"Channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create channel",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dc81fac28291f97f176f6dec305b5fc9",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "AC68e755f9b09bf542c5ae71b4cc2302dd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "friendlyName",
+							"value": "Postman",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://chat.twilio.com/v2/Services/ISf3057fcd46c2488aa0a7882e464263a7/Channels",
+					"protocol": "https",
+					"host": [
+						"chat",
+						"twilio",
+						"com"
+					],
+					"path": [
+						"v2",
+						"Services",
+						"ISf3057fcd46c2488aa0a7882e464263a7",
+						"Channels"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a channel",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dc81fac28291f97f176f6dec305b5fc9",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "AC68e755f9b09bf542c5ae71b4cc2302dd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "friendlyName",
+						"value": "\"Postman\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"friendlyName\":\"Postman\"\n}"
+				},
+				"url": {
+					"raw": "https://chat.twilio.com/v2/Services/ISf3057fcd46c2488aa0a7882e464263a7/Channels/CHeef0b5a076264238b67e64e4852db4fd?friendly_name=\"Postman\"",
+					"protocol": "https",
+					"host": [
+						"chat",
+						"twilio",
+						"com"
+					],
+					"path": [
+						"v2",
+						"Services",
+						"ISf3057fcd46c2488aa0a7882e464263a7",
+						"Channels",
+						"CHeef0b5a076264238b67e64e4852db4fd"
+					],
+					"query": [
+						{
+							"key": "friendly_name",
+							"value": "\"Postman\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a channel",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dc81fac28291f97f176f6dec305b5fc9",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "AC68e755f9b09bf542c5ae71b4cc2302dd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://chat.twilio.com/v2/Services/ISf3057fcd46c2488aa0a7882e464263a7/Channels/CH514fbdecc5db4ca0a13b5c345a99a490",
+					"protocol": "https",
+					"host": [
+						"chat",
+						"twilio",
+						"com"
+					],
+					"path": [
+						"v2",
+						"Services",
+						"ISf3057fcd46c2488aa0a7882e464263a7",
+						"Channels",
+						"CH514fbdecc5db4ca0a13b5c345a99a490"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
