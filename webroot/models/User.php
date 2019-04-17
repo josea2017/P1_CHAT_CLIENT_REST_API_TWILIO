@@ -24,7 +24,8 @@ class User
     public function all_users()
     {
       $users = null;
-      $users = $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+      //old  ISf3057fcd46c2488aa0a7882e464263a7
+      $users = $this->twilio->chat->v2->services("ISc4e910cc9a764ea1af2fa76666626be9")
                           ->users
                           ->read();
       return $users;
@@ -33,14 +34,16 @@ class User
     public function get_user_sid($identity)
     {
       $user = null;
-      $user = $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+      //ISf3057fcd46c2488aa0a7882e464263a7
+      $user = $this->twilio->chat->v2->services("ISc4e910cc9a764ea1af2fa76666626be9")
                          ->users($identity)
                          ->fetch();
       return $user->sid;
     }
 
     public function get_user($identity){
-      $user = $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+      //ISf3057fcd46c2488aa0a7882e464263a7
+      $user = $this->twilio->chat->v2->services("ISc4e910cc9a764ea1af2fa76666626be9")
                          ->users("$identity")
                          ->fetch();
       return $user;
@@ -48,7 +51,9 @@ class User
 
     public function create_user($identity)
     {
-      $user = $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+      //old// ISf3057fcd46c2488aa0a7882e464263a7
+      //ISc4e910cc9a764ea1af2fa76666626be9
+      $user = $this->twilio->chat->v2->services("ISc4e910cc9a764ea1af2fa76666626be9")
                          ->users
                          ->create($identity);
       return $user;
@@ -64,7 +69,8 @@ class User
     }*/
     public function add_member_at_channel($channel_sid, $identity)
     {
-      $this->twilio->chat->v2->services("ISf3057fcd46c2488aa0a7882e464263a7")
+      //ISf3057fcd46c2488aa0a7882e464263a7
+      $this->twilio->chat->v2->services("ISc4e910cc9a764ea1af2fa76666626be9")
                            ->channels($channel_sid)
                            ->members
                            ->create($identity); 

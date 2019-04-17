@@ -28,8 +28,11 @@ use Twilio\Rest\Client;
 use Twilio\Jwt\AccessToken;
 use Twilio\Jwt\Grants\ChatGrant;
 // Find your Account Sid and Auth Token at twilio.com/console
-$sid    = "AC68e755f9b09bf542c5ae71b4cc2302dd";
-$token  = "dc81fac28291f97f176f6dec305b5fc9";
+//$sid    = "AC68e755f9b09bf542c5ae71b4cc2302dd";
+//$token  = "dc81fac28291f97f176f6dec305b5fc9";
+//$twilio = new Client($sid, $token);
+$sid    = "ACa73f2c3ad068b4f755f7df86ac799a8d";
+$token  = "fb23dae9ffe3fb4d7cda20d96af203a6";
 $twilio = new Client($sid, $token);
 /////////***************    CHANNELS   **********************************
 if(isset($_POST['btn_delete_channel'])){
@@ -111,7 +114,8 @@ if(isset($_POST['btn_edit_channel'])){
          </tr>
          <tr>
            <?php  
-            if ($user->roleSid == "RL3880911547974c51afd0f8a86b1f755c") {
+           //RL3880911547974c51afd0f8a86b1f755c
+            if ($user->roleSid == "RL75a63c5c0c394958aba20ecd6c04be36") {
            ?>
            <td colspan="2"> <button class="btn btn-success" type="submit" name="btn_new_channel" style="width: 250px;">Create</button></td>
             <?php 
@@ -140,7 +144,8 @@ if(isset($_POST['btn_edit_channel'])){
                  "</td>";
             echo "<td>" . "<button class='btn btn-secondary' type='submit' name='btn_join_at_channel' value='$record->sid'>" .  "Join" . "</button>" . 
                  "</td>";
-                 if ($user->roleSid == "RL3880911547974c51afd0f8a86b1f755c") {
+                 //RL3880911547974c51afd0f8a86b1f755c
+                 if ($user->roleSid == "RL75a63c5c0c394958aba20ecd6c04be36") {
             echo "<td>" . "<button class='btn btn-warning' type='submit' name='btn_edit_channel' value='$record->sid'>" .  "Edit" . "</button>" . 
                  "</td>";
             echo "<td>" .
