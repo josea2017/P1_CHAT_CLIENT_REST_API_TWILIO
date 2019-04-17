@@ -7,8 +7,10 @@ require_once '../../vendor/autoload.php';
 use Twilio\Rest\Client;
 use Twilio\Jwt\AccessToken;
 use Twilio\Jwt\Grants\ChatGrant;
-$sid    = "AC68e755f9b09bf542c5ae71b4cc2302dd";
-$token  = "dc81fac28291f97f176f6dec305b5fc9";
+//old $sid    = "AC68e755f9b09bf542c5ae71b4cc2302dd";
+//old $token  = "dc81fac28291f97f176f6dec305b5fc9";
+$sid    = "ACa73f2c3ad068b4f755f7df86ac799a8d";
+$token  = "fb23dae9ffe3fb4d7cda20d96af203a6";
 $twilio = new Client($sid, $token);
 
 
